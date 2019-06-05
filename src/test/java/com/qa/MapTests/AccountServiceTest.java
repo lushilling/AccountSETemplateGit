@@ -113,22 +113,22 @@ public class AccountServiceTest {
 
 	}
 
-	@Test
-	@Ignore
-	public void getCountForFirstNamesInAccountWhenZeroOccurances() {
-
-	}
-
-	@Test
-	@Ignore
-	public void getCountForFirstNamesInAccountWhenOne() {
-
-	}
-
-	@Test
-	@Ignore
-	public void getCountForFirstNamesInAccountWhenTwo() {
-
-	}
+//	@Test
+//	@Ignore
+//	public void getCountForFirstNamesInAccountWhenZeroOccurances() {
+//
+//	}
+//
+//	@Test
+//	@Ignore
+//	public void getCountForFirstNamesInAccountWhenOne() {
+//
+//	}
+//
+//	@Test
+//	@Ignore
+//	public void getCountForFirstNamesInAccountWhenTwo() {
+//
+//	}
 
 }
