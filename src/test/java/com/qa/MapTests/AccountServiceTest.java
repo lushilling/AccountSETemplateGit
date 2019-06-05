@@ -113,22 +113,32 @@ public class AccountServiceTest {
 
 	}
 
-//	@Test
-//	@Ignore
-//	public void getCountForFirstNamesInAccountWhenZeroOccurances() {
-//
-//	}
-//
-//	@Test
-//	@Ignore
-//	public void getCountForFirstNamesInAccountWhenOne() {
-//
-//	}
-//
-//	@Test
-//	@Ignore
-//	public void getCountForFirstNamesInAccountWhenTwo() {
-//
-//	}
+	@Test
+	 public void getCountForFirstNamesInAccountWhenZeroOccurances() {
+		amr.getAccountMap().put(1, acc1);
+		amr.getAccountMap().put(2, acc2);
+		amr.getAccountMap().put(3, acc3);
+
+		assertEquals(0, amr.countNames("Lucy"));
+
+	 }
+
+	@Test
+	public void getCountForFirstNamesInAccountWhenOne() {
+		amr.getAccountMap().put(1, acc1);
+		amr.getAccountMap().put(2, acc2);
+		amr.getAccountMap().put(3, acc3);
+
+		assertEquals(1, amr.countNames("Bert"));
+	}
+
+	@Test
+	public void getCountForFirstNamesInAccountWhenTwo() {
+		amr.getAccountMap().put(1, acc1);
+		amr.getAccountMap().put(2, acc2);
+		amr.getAccountMap().put(3, acc3);
+
+		assertEquals(2, amr.countNames("Matt"));
+	}
 
 }

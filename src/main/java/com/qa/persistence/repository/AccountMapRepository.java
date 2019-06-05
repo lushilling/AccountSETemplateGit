@@ -57,6 +57,23 @@ public class AccountMapRepository implements AccountRepository{
 		this.accountMap = accountMap;
 	}
 	
+	public int countNames(String firstName) {
+		int c = 0;
+		for (Account a : accountMap.values()) {
+			a.getFirstName();
+			if (a.getFirstName().equals(firstName)) {
+				c += 1;
+			}
+			
+		}
+		return c;
+		
+		
+		
+	}
+	
+	
+	
 
 
 }
