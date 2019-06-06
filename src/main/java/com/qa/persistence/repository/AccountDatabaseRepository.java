@@ -1,6 +1,6 @@
 package com.qa.persistence.repository;
 
-import java.util.List;
+import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -11,7 +11,8 @@ import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
 
 @Transactional(TxType.SUPPORTS)
-public class AccountDatabaseRepository {
+@Default
+public class AccountDatabaseRepository implements AccountRepository {
 
 	private JSONUtil json;
 
@@ -19,9 +20,9 @@ public class AccountDatabaseRepository {
 	private EntityManager em;
 
 	@Transactional(TxType.SUPPORTS)
-	public List<Account> getAllAccounts() {
+	public String getAllAccounts() {
 		TypedQuery<Account> getAll = em.createQuery("SELECT a FROM Account a", Account.class);
-		return getAll.getResultList();
+		return getAll.toString();
 
 	}
 
@@ -39,17 +40,14 @@ public class AccountDatabaseRepository {
 
 	}
 
-	public Account findAccount(int id) {
-		return em.find(Account.class, id);
-	}
-
 	@Transactional(TxType.REQUIRED)
 	public String updateAccount(int accountNumber, String account) {
-		Account account1 = json.getObjectForJSON(account, Account.class);
-		Account updateAccount1 = findAccount(accountNumber);
-		updateAccount1 = account1;
+		Account newAccount = json.getObjectForJSON(account, Account.class);
+		Account oldAccount = em.find(Account.class, accountNumber);
+		oldAccount = newAccount;
 		em.getTransaction().begin();
-		em.merge(updateAccount1);
+		em.detach(oldAccount);
+		em.merge(newAccount);
 		em.getTransaction().commit();
 
 		return json.returnMessage("Account successfully updated");
