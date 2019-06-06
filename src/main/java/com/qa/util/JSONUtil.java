@@ -32,5 +32,9 @@ public class JSONUtil {
 		return null ; 
 			
 	}
+	
+	public String returnMessage(String s) {
+		return "{\"message\": \"" + s + "\"";
+	}
 
 }
