@@ -9,9 +9,6 @@ public class AccountServiceImp implements AccountService {
 	@Inject
 	private AccountRepository repo;
 	
-	public void setRepe(AccountRepository repo) {
-		this.repo = repo;
-	}
 
 	@Override
 	public String getAllAccounts() {
@@ -21,9 +18,6 @@ public class AccountServiceImp implements AccountService {
 
 	@Override
 	public String createAccount(String account) {
-		if (account.contains(account)) {
-			return "Can't add this account";
-		}
 		return repo.createAccount(account);
 	}
 

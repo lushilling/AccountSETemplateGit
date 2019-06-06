@@ -24,43 +24,43 @@ public class AccountServiceTest {
 		amr = new AccountMapRepository();
 	}
 
-	@Test
-	public void getAllAccountsTest() {
+//	@Test
+//	public void getAllAccountsTest() {
+//
+//		assertEquals("{}", amr.getAllAccounts());
+//	}
 
-		assertEquals("{}", amr.getAllAccounts());
-	}
+//	@Test
+//	public void getAllAccountsTest2() {
+//
+//		amr.getAccountMap().put(1, acc1);
+//		assertEquals("{\"1\":{\"id\":1,\"accountNumber\":\"D0001\",\"firstName\":\"Matt\",\"lastName\":\"Hunt\"}}",
+//				amr.getAllAccounts());
+//	}
 
-	@Test
-	public void getAllAccountsTest2() {
+//	@Test
+//	public void updateAccountTest() {
+//
+//		amr.getAccountMap().put(1, acc1);
+//		amr.updateAccount(1, "{\"id\":1,\"accountNumber\":\"D0001\",\"firstName\":\"Matt\",\"lastName\":\"Wright\"}");
+//		assertEquals("Wright", amr.getAccountMap().get(1).getLastName());
+//	}
 
-		amr.getAccountMap().put(1, acc1);
-		assertEquals("{\"1\":{\"id\":1,\"accountNumber\":\"D0001\",\"firstName\":\"Matt\",\"lastName\":\"Hunt\"}}",
-				amr.getAllAccounts());
-	}
+//	@Test
+//	public void addAccountTest() {
+//		String accToCreate = jsonUtil.getJSONForObject(acc1);
+//		System.out.println(accToCreate);
+//		assertEquals(amr.createAccount(accToCreate), "Account successfuly created");
+//		assertEquals(amr.getAccountMap().size(), 1);
+//
+//	}
 
-	@Test
-	public void updateAccountTest() {
-
-		amr.getAccountMap().put(1, acc1);
-		amr.updateAccount(1, "{\"id\":1,\"accountNumber\":\"D0001\",\"firstName\":\"Matt\",\"lastName\":\"Wright\"}");
-		assertEquals("Wright", amr.getAccountMap().get(1).getLastName());
-	}
-
-	@Test
-	public void addAccountTest() {
-		String accToCreate = jsonUtil.getJSONForObject(acc1);
-		System.out.println(accToCreate);
-		assertEquals(amr.createAccount(accToCreate), "Account successfuly created");
-		assertEquals(amr.getAccountMap().size(), 1);
-
-	}
-
-	@Test
-	public void add2AccountsTest() {
-		assertEquals(amr.createAccount(jsonUtil.getJSONForObject(acc1)), "Account successfuly created");
-		assertEquals(amr.createAccount(jsonUtil.getJSONForObject(acc2)), "Account successfuly created");
-		assertEquals(amr.getAccountMap().size(), 2);
-	}
+//	@Test
+//	public void add2AccountsTest() {
+//		assertEquals(amr.createAccount(jsonUtil.getJSONForObject(acc1)), "Account successfuly created");
+//		assertEquals(amr.createAccount(jsonUtil.getJSONForObject(acc2)), "Account successfuly created");
+//		assertEquals(amr.getAccountMap().size(), 2);
+//	}
 
 	@Test
 	public void removeAccountTest() {
